@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>List Books</title>
+  </head>
+  <body>
+    <form action="/books" method="post">
+      ISBN:<br>
+      <input type="text" name="isbn"><br>
+      Title:<br>
+      <input type="text" name="title"><br>
+      Author:<br>
+      <input type="text" name="author"><br>
+      Category:<br>
+      <input type="text" name="category"><br>
+      Stock:<br>
+      <input type="text" name="stock"><br>
+
+      <input type="submit" value="Masukin aja ya kan">
+    </form>
+    <h1>List books</h1>
+    <table>
+      <tr>
+        <th>ISBN</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Stocks</th>
+      </tr>
+      <% for(let i=0; i<Books.length; i++) { %>
+      <tr>
+        <td><%= Books[i].isbn %></td>
+        <td><%= Books[i].title %></td>
+        <td><%= Books[i].author %></td>
+        <td><%= Books[i].category %></td>
+        <td><%= Books[i].stock %></td>
+      </tr>
+      <% } %>
+    </table>
+
+  </body>
+</html>
