@@ -80,6 +80,8 @@ module.exports = {
       author: req.body.author,
       category: req.body.category,
       stock: req.body.stock
+    }).then(function (data) {
+      res.send(data)
     })
   },
   insertCustomer: function (req, res, next) {
@@ -89,6 +91,8 @@ module.exports = {
       address: req.body.author,
       zipcode: req.body.zipcode,
       phone: req.body.phone
+    }).then(function (data) {
+      res.send(data)
     })
   },
   insertTransaction: function (req, res, next) {
@@ -100,6 +104,8 @@ module.exports = {
       in_date: new Date(),
       fine: req.body.fine,
       booklist: req.body.booklist
+    }).then(function (data) {
+      res.send(data)
     })
   },
   bulkInsertBook: function (req, res, next) {

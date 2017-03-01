@@ -6,8 +6,8 @@ var Controller = require('../controller')
 router.get('/', Controller.getIndex)
 // Show Data
 router.get('/getTransactions', Controller.getTransactions)
-router.get('/getCustomers', Controller.getTransactions)
-router.get('/getBooks', Controller.getTransactions)
+router.get('/getCustomers', Controller.getCustomers)
+router.get('/getBooks', Controller.getBooks)
 // Insert Data
 router.post('/insertBook', Controller.insertBook)
 router.post('/insertCustomer', Controller.insertCustomer)
