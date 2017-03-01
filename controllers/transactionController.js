@@ -18,7 +18,7 @@ module.exports = {
       }
     })
   },
-  updateTransaction: function(){
+  updateTransaction: function(req,res){
     Transaction.findOneAndUpdate({_id:req.params.id}, req.body, {new:true}, function(err, data){
       if (err){
         res.send(err)
@@ -27,7 +27,7 @@ module.exports = {
       }
     })
   },
-  deleteTransaction: function(){
+  deleteTransaction: function(req,res){
     Transaction.findOneAndRemove({_id:req.params.id}, function(err, data){
       if (err){
         res.send(err)
@@ -36,7 +36,7 @@ module.exports = {
       }
     })
   },
-  readTransactions: function(){
+  readTransactions: function(req,res){
     Transaction.find({}, function(err,data){
       if(err){
         res.send(err)
@@ -45,7 +45,7 @@ module.exports = {
       }
     })
   },
-  readTransaction: function(){
+  readTransaction: function(req,res){
     Transaction.find({_id:req.params.id}, function(err,data){
       if(err){
         res.send(err)

@@ -11,22 +11,22 @@ router.get('/', function(req, res, next) {
 
 //routing books
 router.get('/api/book/:id', bookController.readBook)
-router.get('/api/book', bookController.readBooks)
-router.post('/api/book/:id', bookController.createBook)
+router.get('/api/books', bookController.readBooks)
+router.post('/api/book', bookController.createBook)
 router.put('/api/book/:id', bookController.updateBook)
 router.delete('/api/book/:id', bookController.deleteBook)
 
 //routing customer
 router.get('/api/customer/:id', customerController.readCustomer)
-router.get('/api/customer', customerController.readCustomers)
-router.post('/api/customer/:id', customerController.createCustomer)
+router.get('/api/customers', customerController.readCustomers)
+router.post('/api/customer', customerController.createCustomer)
 router.put('/api/customer/:id', customerController.updateCustomer)
 router.delete('/api/customer/:id', customerController.deleteCustomer)
 
 //routing transaction
 router.get('/api/transaction/:id', transactionController.readTransaction)
-router.get('/api/transaction', transactionController.readTransactions)
-router.post('/api/transaction/:id', transactionController.createTransaction)
+router.get('/api/transactions', transactionController.readTransactions)
+router.post('/api/transaction', transactionController.createTransaction)
 router.put('/api/transaction/:id', transactionController.updateTransaction)
 router.delete('/api/transaction/:id', transactionController.deleteTransaction)
 

@@ -16,7 +16,7 @@ module.exports = {
       }
     })
   },
-  updateCustomer: function(){
+  updateCustomer: function(req,res){
     Customer.findOneAndUpdate({_id:req.params.id}, req.body, {new:true}, function(err, data){
       if (err){
         res.send(err)
@@ -25,7 +25,7 @@ module.exports = {
       }
     })
   },
-  deleteCustomer: function(){
+  deleteCustomer: function(req,res){
     Customer.findOneAndRemove({_id:req.params.id}, function(err, data){
       if (err){
         res.send(err)
@@ -34,7 +34,7 @@ module.exports = {
       }
     })
   },
-  readCustomers: function(){
+  readCustomers: function(req,res){
     Customer.find({}, function(err,data){
       if(err){
         res.send(err)
@@ -43,7 +43,7 @@ module.exports = {
       }
     })
   },
-  readCustomer: function(){
+  readCustomer: function(req,res){
     Customer.find({_id:req.params.id}, function(err,data){
       if(err){
         res.send(err)

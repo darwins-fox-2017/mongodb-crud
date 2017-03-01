@@ -16,7 +16,7 @@ module.exports = {
       }
     })
   },
-  updateBook: function(){
+  updateBook: function(req,res){
     Book.findOneAndUpdate({_id:req.params.id}, req.body, {new:true}, function(err, data){
       if (err){
         res.send(err)
@@ -25,7 +25,7 @@ module.exports = {
       }
     })
   },
-  deleteBook: function(){
+  deleteBook: function(req,res){
     Book.findOneAndRemove({_id:req.params.id}, function(err, data){
       if (err){
         res.send(err)
@@ -34,7 +34,7 @@ module.exports = {
       }
     })
   },
-  readBooks: function(){
+  readBooks: function(req,res){
     Book.find({}, function(err,data){
       if(err){
         res.send(err)
@@ -43,7 +43,7 @@ module.exports = {
       }
     })
   },
-  readBook: function(){
+  readBook: function(req,res){
     Book.find({_id:req.params.id}, function(err,data){
       if(err){
         res.send(err)
