@@ -29,6 +29,8 @@ router.get('/api/transactions', transactionController.readTransactions)
 router.post('/api/transaction', transactionController.createTransaction)
 router.put('/api/transaction/:id', transactionController.updateTransaction)
 router.delete('/api/transaction/:id', transactionController.deleteTransaction)
+router.post('/api/transaction/addbook/:id', transactionController.addBooksToCart)
+router.post('/api/transaction/deletebook/:id', transactionController.deleteBooksfromCart)
 
 
 module.exports = router;

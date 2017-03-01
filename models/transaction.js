@@ -8,7 +8,7 @@ var transactionsSchema = new Schema({
   due_date: Date,
   in_date: Date,
   fine: Number,
-  booklist: [{isbn:{type: Schema.Types.ObjectId, ref: 'Books'}, qty : Number}]
+  booklist: [{isbn: {type: Schema.Types.ObjectId, ref: 'Book'}}]
 },{
   timestamps:true
 })

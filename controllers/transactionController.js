@@ -3,13 +3,12 @@ var Transaction = require('../models/transaction')
 module.exports = {
   createTransaction: function(req,res){
     Transaction.create({
-      memberid: req.body.memberid,
+      memberid: req.body.id,
       days: req.body.days,
-      out_date: req.body.out_date,
-      due_date: req.body.due_date,
-      in_date: req.body.in_date,
+      out_date: new Date(),
+      due_date: new Date(),
+      in_date: new Date(),
       fine: req.body.fine,
-      booklist: req.body.booklist
     }, function (err, data) {
       if (err) {
         res.send(err)
@@ -37,21 +36,50 @@ module.exports = {
     })
   },
   readTransactions: function(req,res){
-    Transaction.find({}, function(err,data){
-      if(err){
-        res.send(err)
-      }else{
-        res.send(data)
-      }
-    })
+    Transaction.find({})
+      .populate('booklist')
+      .exec(function(err,data){
+        if(err){
+          res.send(err)
+        }else{
+          res.send(data)
+        }
+      });
   },
   readTransaction: function(req,res){
-    Transaction.find({_id:req.params.id}, function(err,data){
-      if(err){
-        res.send(err)
-      }else{
-        res.send(data)
-      }
-    })
+    Transaction.findOne({_id:req.params.id})
+      .populate('booklist')
+      .exec(function(err,data){
+        if(err){
+          res.send(err)
+        }else{
+          res.send(data)
+        }
+      });
   },
+  addBooksToCart : function (req, res) {
+    Transaction.update(
+        {_id: req.params.id},
+        {$push: {booklist:{isbn: req.body.bookid}}},
+        {upsert: true}, function(err,data){
+          if(err){
+            res.send(err)
+          }else{
+            res.send(data)
+          }
+        })
+    },
+
+  deleteBooksfromCart : function (req, res) {
+    Transaction.update(
+        {_id: req.params.id},
+        {$pull: {booklist:{isbn: req.body.bookid}}},
+        {upsert: true}, function(err,data){
+          if(err){
+            res.send(err)
+          }else{
+            res.send(data)
+          }
+        })
+    }
 }
