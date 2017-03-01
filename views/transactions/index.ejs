@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>List Transaction</title>
+  </head>
+  <body>
+    <form action="/transactions" method="post">
+      Member ID:<br>
+      <input type="text" name="memberid"><br>
+      days:<br>
+      <input type="text" name="days"><br>
+      Address:<br>
+      <input type="text" name="address"><br>
+      Zip Code:<br>
+      <input type="text" name="zipcode"><br>
+      Phone:<br>
+      <input type="text" name="phone"><br>
+
+      <input type="submit" value="Masukin aja ya kan">
+    </form>
+    <h1>List Customer</h1>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Member ID</th>
+        <th>Address</th>
+        <th>Zip Code</th>
+        <th>Phone</th>
+      </tr>
+      <% for(let i=0; i<Customers.length; i++) { %>
+      <tr>
+        <td><%= Customers[i].nama %></td>
+        <td><%= Customers[i].memberid %></td>
+        <td><%= Customers[i].address %></td>
+        <td><%= Customers[i].zipcode %></td>
+        <td><%= Customers[i].phone %></td>
+      </tr>
+      <% } %>
+    </table>
+
+  </body>
+</html>
