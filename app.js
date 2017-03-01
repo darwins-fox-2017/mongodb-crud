@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 // Mongoose
 var mongoose = require('mongoose')
+mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/library')
 
 // Import Mongoose Models

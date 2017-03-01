@@ -1,15 +1,11 @@
 let Transaction = require('../models/transaction')
-
 let faker = require('faker')
+
 
 module.exports = {
   index: function(req, res, next){
-    Transaction.find({}, function(err, transactions){
-      if (err) {
-        res.send(err)
-      } else {
-        res.json(transactions)
-      }
+    Transaction.find({}).populate('booklist').exec((err, transactions) => {
+      res.json(transactions)
     })
   },
   create: function(req, res, next){
