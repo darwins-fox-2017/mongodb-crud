@@ -4,7 +4,7 @@ let faker = require('faker')
 
 module.exports = {
   index: function(req, res, next){
-    Transaction.find({}).populate('booklist').exec((err, transactions) => {
+    Transaction.find({}).populate('booklist').then((transactions) => {
       res.json(transactions)
     })
   },
