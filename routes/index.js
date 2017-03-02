@@ -6,7 +6,7 @@ var controllerTransactions = require('../controller/controllerTransactions')
 
 /* GET home page. */
 router.get('/', function(req, res, next){
-  res.send('Menu URL\nhttp://localhost:3000\n\nFind All Books (GET): /books\nFind By ISBN (GET): /book/search?isbn=\nCreate Book (POST): /book\nUpdate Book (PUT): /book/:isbn\nDelete Book (DELETE): /book/:isbn\nFind All Customers (GET): /customers\nFind By Member ID (GET): /customer/search?memberid=\nCreate Member (POST): /customer\nUpdate Member (PUT): /customer/:memberid\nDelete Member (DELETE): /customer/:memberid\nFind All Transaction (GET): /transactions\nFind By ID (GET): /transaction/search?id=\nCreate Transaction (POST): /transaction\nUpdate Transaction (PUT): /transaction/:id\nDelete Transaction (DELETE): /transaction/:id')
+  res.send('Menu URL\nhttp://localhost:3000\n\nFind All Books (GET): /books\n\nFind By ISBN (GET): /book/search?isbn=\n\nCreate Book (POST): /book\n\nUpdate Book (PUT): /book/:isbn\n\nDelete Book (DELETE): /book/:isbn\n\nFind All Customers (GET): /customers\n\nFind By Member ID (GET): /customer/search?memberid=\n\nCreate Member (POST): /customer\n\nUpdate Member (PUT): /customer/:memberid\n\nDelete Member (DELETE): /customer/:memberid\n\nFind All Transaction (GET): /transactions\n\nFind By ID (GET): /transaction/search?id=\n\nCreate Transaction (POST): /transaction\n\nUpdate Transaction (PUT): /transaction/:id\n\nDelete Transaction (DELETE): /transaction/:id')
 });
 
 router.get('/books', controllerBooks.findAllBooks);

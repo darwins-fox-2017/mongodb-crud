@@ -11,19 +11,33 @@ Menu URL
 http://localhost:3000
 
 Find All Books (GET): /books
+
 Find By ISBN (GET): /book/search?isbn=
+
 Create Book (POST): /book
+
 Update Book (PUT): /book/:isbn
+
 Delete Book (DELETE): /book/:isbn
+
 Find All Customers (GET): /customers
+
 Find By Member ID (GET): /customer/search?memberid=
+
 Create Member (POST): /customer
+
 Update Member (PUT): /customer/:memberid
+
 Delete Member (DELETE): /customer/:memberid
+
 Find All Transaction (GET): /transactions
+
 Find By ID (GET): /transaction/search?id=
+
 Create Transaction (POST): /transaction
+
 Update Transaction (PUT): /transaction/:id
+
 Delete Transaction (DELETE): /transaction/:id
 
 ## Create Schema
