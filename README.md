@@ -10,35 +10,41 @@
 Menu URL
 http://localhost:3000
 
-Find All Books (GET): /books
+Find All Books (GET)        : /books
 
-Find By ISBN (GET): /book/search?isbn=
+Find By ISBN (GET)          : /book/search?isbn=
 
-Create Book (POST): /book
+Create Book (POST)          : /book
 
-Update Book (PUT): /book/:isbn
+Update Book (PUT)           : /book/:isbn
 
-Delete Book (DELETE): /book/:isbn
+Delete Book (DELETE)        : /book/:isbn
 
-Find All Customers (GET): /customers
+Find All Customers (GET)    : /customers
 
-Find By Member ID (GET): /customer/search?memberid=
+Find By Member ID (GET)     : /customer/search?memberid=
 
-Create Member (POST): /customer
+Create Member (POST)        : /customer
 
-Update Member (PUT): /customer/:memberid
+Update Member (PUT)         : /customer/:memberid
 
-Delete Member (DELETE): /customer/:memberid
+Delete Member (DELETE)      : /customer/:memberid
 
-Find All Transaction (GET): /transactions
+Find All Transaction (GET)  : /transactions
 
-Find By ID (GET): /transaction/search?id=
+Find By ID (GET)            : /transaction/search?id=
 
-Create Transaction (POST): /transaction
+Create Transaction (POST)   : /transaction
 
-Update Transaction (PUT): /transaction/:id
+Update Transaction (PUT)    : /transaction/:id
 
-Delete Transaction (DELETE): /transaction/:id
+Delete Transaction (DELETE) : /transaction/:id
+
+## Using Seed
+
+Seed books (GET)        : /seeds/books
+Seed customers (GET)    : /seeds/customers
+Seed transactions (GET) : /seeds/transactions
 
 ## Create Schema
 1. use library
