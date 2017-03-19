@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Book</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>List All Book</h1>
+    <br>
+    <a href="book/new">Add new book</a>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Data Id Table</th>
+                <th>Isbn</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let i = 0; i < resultBook.length; i++) { %>
+                <tr>
+                    <th scope="row">
+                        <%= i + 1 %>
+                    </th>
+                    <td>
+                        <%= resultBook[i].dataId %>
+                    </td>
+                    <td>
+                        <%= resultBook[i].isbn %>
+                    </td>
+                    <td>
+                        <%= resultBook[i].title %>
+                    </td>
+                    <td>
+                        <%= resultBook[i].author %>
+                    </td>
+                    <td>
+                        <%= resultBook[i].category %>
+                    </td>
+                    <td>
+                        <%= resultBook[i].stock %>
+                    </td>
+                    <td>
+                        <a href="book/update/<%= resultBook[i].dataId %>"> Update </a>
+                        <span> | </span>
+                        <a href="book/delete/<%= resultBook[i].dataId %>"> Delete </a>
+                    </td>
+                    <% } %>
+                </tr>
+        </tbody>
+    </table>
+    </form>
+</body>
+
+</html>
